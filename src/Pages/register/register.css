@@ -1,4 +1,20 @@
-.login__resgister{
-    background-color: blue;
-    font-size: 3rem;
+.register{
+    background-image: url('../../assets/fondoPlomo.jpeg');
+    background-size: cover;
 }
+
+.register__body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.register__title{
+    font-size: 3.7rem;  
+    color: #fff;
+    font-weight: lighter;
+}
+
