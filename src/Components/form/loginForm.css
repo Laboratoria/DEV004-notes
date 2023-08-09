@@ -18,29 +18,30 @@
     margin: 4px auto;
 }
 
-.form__label{
+/* .form__label{
     font-size: 1.4rem;
     margin-left: 5px;
-}
+} */
 
 .form__inp{
     width: 100%;
     border-radius: 13px;
-    padding: 10px;
-    border: none;
+    padding: 11px;
+    outline: none;
     margin-top: 2px;
     border: solid 1px rgb(80, 77, 77);
  }
 
 .form__inp::placeholder {
      color: rgb(130, 126, 126);
+     font-size: 1.5rem;
 }
 
 .form__btn-login {
     margin-top: 17px;
     border-radius: 15px;
     font-weight: bold;
-    padding: 8px;
+    padding: 9px;
     outline: none;
     border: none;
     font-size: 1.7rem;
@@ -73,6 +74,7 @@
     color: rgb(148, 18, 18);
     font-size: 1.2rem;
     font-weight: bold;
+    padding: 3px 7px 0 ;
   }
 
 

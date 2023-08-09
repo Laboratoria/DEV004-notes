@@ -13,14 +13,14 @@ const RegisterForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm()
 
     const onSubmitLogin = (data) =>{      
-        firebase().signIn(data.email, data.password)
+        firebase().createUser(data.email, data.password)
         .then(user => {
             console.log(user)
             if (user) {
                 navigate('/wall')
             }else {
-                console.log('correo y contraseña inconrrecta')
-                setErrorMessage('correo y contraseña inconrrecta');
+                console.log('Oops! That username or password are incorrect')
+                setErrorMessage('Oops! That username or password are incorrect');
             }
         })        
     }
@@ -59,11 +59,15 @@ const RegisterForm = () => {
                 {/* <label className='form__label'htmlFor="password">Password</label> */}
                 <input 
                     {...register('password',{
-                        required: 'Password requierd',
-                        maxLength:{
-                            value:10,
-                            message:'maximo 6 letras'
-                        }
+                        required: '*Password requierd',
+                        minLength: {
+                            value: 4,
+                            message: "*Password too short",
+                          },
+                          maxLength: {
+                            value: 10,
+                            message: "*Password too long, maximum 10 characters",
+                          },
                     })}
                
                     className="form__inp" 
