@@ -8,6 +8,7 @@ import "./loginForm.css";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  // hook para personalizar errores en los inputs
   const {
     register,
     handleSubmit,

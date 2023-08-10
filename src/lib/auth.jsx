@@ -5,6 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+
 import { app } from "./firebaseConfig";
 
 const firebase = () => {
@@ -24,21 +25,18 @@ const firebase = () => {
         console.log(error.message);
       });
   };
-   
 
   //Crear usuario con correo y contraseña
-  const createUser = (email, password) =>{
+  const createUser = (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential)=>{
-        const user = userCredential.user
+      .then((userCredential) => {
+        const user = userCredential.user;
         return user;
-    })
-    .catch((error)=>{
-        console.log(error)
-    })
-}
-
-
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   // Autenticación con Google
   const singGoogle = () => {
@@ -54,7 +52,7 @@ const firebase = () => {
   return {
     signIn,
     singGoogle,
-    createUser
+    createUser,
   };
 };
 

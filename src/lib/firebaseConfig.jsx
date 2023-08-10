@@ -1,4 +1,3 @@
-
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -8,10 +7,8 @@ const firebaseConfig = {
   storageBucket: "labnotes-15c7b.appspot.com",
   messagingSenderId: "182199350613",
   appId: "1:182199350613:web:d58c3ca5c8df827d452bdc",
-  measurementId: "G-XCK2ZPXT50"
+  measurementId: "G-XCK2ZPXT50",
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-
-
