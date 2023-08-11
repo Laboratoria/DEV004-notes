@@ -1,84 +1,99 @@
 /* eslint-disable react/prop-types */
+import ClickButton from '../buttonGoogle/btnGoogle';
 
 import './form.css';
-import iconGoogle from '../../assets/google.png';
 
-
-const Form = ({ email,
-    password,
-    setEmail,
-    setPassword,
-    errorMessage,
-    linkText,
-    onClickinLink,
-    buttonText,
-    onLoginButtonClick,
-    onGoogleButtonClick 
+const Form = ({
+  onSubmit,
+  buttonText,
+  questionText,
+  navigateToView,
+  linkText,
+  register,
+  handleSubmit,
+  errors,
+  errorMessage
 }) => {
-
+  const onClickLoginLink = () => {
+    navigateToView();
+  };
 
   return (
     <div className="column">
-
-        <form className="form__content" action="#">
-
-            <div className="form__group">
-                <label className='form__label' htmlFor="email">Email</label>
-                <input 
-                data-testid="email"
-                className="form__inp" 
-                id="email" 
-                placeholder="example@example.com" 
-                type="text"   
-                name="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                />
-            </div>
-
-            <div className="form__group">
-                <label className='form__label'htmlFor="password">Password</label>
-                <input 
-                data-testid="password"
-                className="form__inp" 
-                id="password"
-                placeholder="*******" 
-                type="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                />
-                
-            </div>
-
-            <p className="error-message">{errorMessage}</p>
-
-            <button className="form__btn-login" type="submit" onClick={onLoginButtonClick}>
-                {buttonText} 
-            </button>
-
-            <div className="form__text">
-                <p>You do not have an account?</p>
-                <a className="form__link" href="#"  onClick={onClickinLink }>
-                    {linkText}
-                </a>                     
-            </div>
-
-            <div className="form__or-line">
-                <hr className="form__hr" />
-                <span className="form__or-text">or</span>
-                <hr className="form__hr" />
-            </div>              
-
-        </form>
-
-        <div className='form__box-google'onClick={onGoogleButtonClick}>
-            <button className="form__btn-google" type="button" >
-                <img className='form__icon-google'src={iconGoogle} alt="Google" />
-                Login with Google
-            </button>
+      <form
+        className="form__content"
+        action="#"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <div className="form__group">
+          <label className='form__label' htmlFor="email">Correo electrónico</label>
+          <input
+            {...register("email", {
+              required: "Se requiere contraseña",
+              pattern: {
+                value: /^\S+@\S+$/i,
+                message: "Email inválido",
+              },
+            })}
+            className="form__inp"
+            id="email"
+            placeholder="Ejemplo@ejemplo.com"
+            type="text"
+            name="email"
+          />
+          {errors.email && (
+            <p className="error-message">{errors.email.message}</p>
+          )}
         </div>
 
+        <div className="form__group">
+          <label className='form__label'htmlFor="password">Contraseña</label>
+          <input
+            {...register("password", {
+              required: "*Se requiere contraseña",
+              minLength: {
+                value: 4,
+                message: "*Contraseña demasiado corta",
+              },
+              maxLength: {
+                value: 9,
+                message: "*Contraseña demasiado larga, máximo 10 caracteres",
+              },
+            })}
+            className="form__inp"
+            id="password"
+            placeholder="*********"
+            type="password"
+            name="password"
+          />
+          {errors.password && (
+            <p className="error-message">{errors.password.message}</p>
+          )}
+        </div>
+
+        <p className="error-message">{errorMessage}</p>
+
+        <button className="form__btn-login" type="submit">
+          {buttonText} 
+        </button>
+        <div className="form__or-line">
+          <hr className="form__hr" />
+          <span className="form__or-text">o</span>
+          <hr className="form__hr" />
+        </div>
+        <ClickButton /> 
+
+        <div className="form__text">
+          <p>{questionText}</p>
+          <a className="form__link" href="#" onClick={onClickLoginLink}>
+          {linkText}
+          </a>
+        </div>
+
+     
+      </form>
+
+      
     </div>
   );
 };

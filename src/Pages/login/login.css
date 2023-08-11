@@ -5,28 +5,26 @@
 }
   */
 
-  .login{
-    background-image: url('../../assets/fondoPlomo.jpeg');
-    background-size: cover;
+.login {
+  background-image: url("../../assets/fondoPlomo.jpeg");
+  background-size: cover;
 }
 
-.login__logo{
-    font-size: 4.5rem;  
-    color: #fff;
-    font-weight: lighter;
-    font-family: 'DM Sans', sans-serif;
-    font-family: 'Inter', sans-serif;
-    font-family: 'Kaushan Script', cursive;
+.login__title {
+  font-size: 4.5rem;
+  color: #fff;
+  font-weight: lighter;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Kaushan Script", cursive;
 }
 
-.login__body{
-    /* height: calc(100vh - 150px); */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
+.login__body {
+  /* height: calc(100vh - 150px); */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
 }
-
-

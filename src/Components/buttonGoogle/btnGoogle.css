@@ -1,0 +1,33 @@
+
+ /* icono google */
+ .form__box-google{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__btn-google{
+    width: 100%;
+    border-radius: 16px;
+    font-weight: bold;
+    color: #000;
+    background-color: beige;
+    padding: 3px;
+    outline: none;
+    border: solid 0.5px rgb(90, 87, 87);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__icon-google{
+    margin-right: 10px;
+} 
+
+
+
+
