@@ -1,18 +1,4 @@
-.register{
-    background-image: url('../../assets/fondoPlomo.jpeg');
-    background-size: cover;
-}
-
-.register__body{
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.register__title{
+.login__title-register{
     font-size: 3.7rem;  
     color: #fff;
     font-weight: lighter;

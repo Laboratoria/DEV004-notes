@@ -1,7 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useState } from "react";
 import firebase from "../../lib/auth";
-import RegisterForm from "../../Components/form/registerForm";
+import Form from "../../Components/form/form";
 import "./register.css";
 
 const Register = () => {
@@ -11,6 +12,7 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmitRegister = (data) => {
     firebase()
@@ -21,7 +23,7 @@ const Register = () => {
           navigate("/wall");
         } else {
           console.log("Oops! That username or password are incorrect");
-          // setErrorMessage('Oops! That username or password are incorrect');
+          setErrorMessage('Oops! That username or password are incorrect');
         }
       });
   };
@@ -31,17 +33,23 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="login">
       <main>
-        <section className="register__body">
-          <h1 className="register__title">Register</h1>
-          <RegisterForm
+        <section className="login__body">
+          <h1 className="login__title-register">Regístrate</h1>
+          <Form
             onSubmit={onSubmitRegister}
-            navigateToRegister={onClickinLink}
+            buttonText='Registrarme'
+            questionText='¿Ya tienes cuenta?'
+            navigateToView={onClickinLink}
+            linkText='Inicia sesión'
             register={register}
             handleSubmit={handleSubmit}
             errors={errors}
+            errorMessage={errorMessage}
           />
+         
+          
         </section>
       </main>
     </div>

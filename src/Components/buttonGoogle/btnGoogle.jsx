@@ -33,7 +33,7 @@ const ClickButton = () => {
         onClick={handleClickGoogle}
       >
         <img className="form__icon-google" src={iconGoogle} alt="Google" />
-        Login with Google
+        Iniciar sesión con google
       </button>
     </div>
   );

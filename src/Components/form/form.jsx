@@ -1,16 +1,21 @@
 /* eslint-disable react/prop-types */
-// import ClickButton from '../buttonGoogle/btnGoogle';
-// import './registerForm.css';
+import ClickButton from '../buttonGoogle/btnGoogle';
 
-const RegisterForm = ({
+import './form.css';
+
+const Form = ({
   onSubmit,
-  navigateToRegister,
+  buttonText,
+  questionText,
+  navigateToView,
+  linkText,
   register,
   handleSubmit,
   errors,
+  errorMessage
 }) => {
   const onClickLoginLink = () => {
-    navigateToRegister();
+    navigateToView();
   };
 
   return (
@@ -21,18 +26,18 @@ const RegisterForm = ({
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="form__group">
-          {/* <label className='form__label' htmlFor="email">Email</label> */}
+          <label className='form__label' htmlFor="email">Correo electrónico</label>
           <input
             {...register("email", {
-              required: "Email required",
+              required: "Se requiere contraseña",
               pattern: {
                 value: /^\S+@\S+$/i,
-                message: "Invalid email",
+                message: "Email inválido",
               },
             })}
             className="form__inp"
             id="email"
-            placeholder="Email"
+            placeholder="Ejemplo@ejemplo.com"
             type="text"
             name="email"
           />
@@ -42,22 +47,22 @@ const RegisterForm = ({
         </div>
 
         <div className="form__group">
-          {/* <label className='form__label'htmlFor="password">Password</label> */}
+          <label className='form__label'htmlFor="password">Contraseña</label>
           <input
             {...register("password", {
-              required: "*Password requierd",
+              required: "*Se requiere contraseña",
               minLength: {
                 value: 4,
-                message: "*Password too short",
+                message: "*Contraseña demasiado corta",
               },
               maxLength: {
-                value: 10,
-                message: "*Password too long, maximum 10 characters",
+                value: 9,
+                message: "*Contraseña demasiado larga, máximo 10 caracteres",
               },
             })}
             className="form__inp"
             id="password"
-            placeholder="Password"
+            placeholder="*********"
             type="password"
             name="password"
           />
@@ -66,29 +71,31 @@ const RegisterForm = ({
           )}
         </div>
 
-        {/* <p className="error-message">{errorMessage}</p> */}
+        <p className="error-message">{errorMessage}</p>
 
         <button className="form__btn-login" type="submit">
-          Sing In
+          {buttonText} 
         </button>
+        <div className="form__or-line">
+          <hr className="form__hr" />
+          <span className="form__or-text">o</span>
+          <hr className="form__hr" />
+        </div>
+        <ClickButton /> 
 
         <div className="form__text">
-          <p>You do not have an account?</p>
+          <p>{questionText}</p>
           <a className="form__link" href="#" onClick={onClickLoginLink}>
-            Sign up
+          {linkText}
           </a>
         </div>
 
-        <div className="form__or-line">
-          <hr className="form__hr" />
-          <span className="form__or-text">or</span>
-          <hr className="form__hr" />
-        </div>
+     
       </form>
 
-      {/* <ClickButton />  */}
+      
     </div>
   );
 };
 
-export default RegisterForm;
+export default Form;

@@ -9,7 +9,7 @@
 
 .form__content{
   display:grid;
-  gap: 5px;
+  /* gap: 5px; */
 }
 
 .form__group{
@@ -18,27 +18,28 @@
     margin: 4px auto;
 }
 
-/* .form__label{
-    font-size: 1.4rem;
+.form__label{
+    font-size: 1.5rem;
     margin-left: 5px;
-} */
+}
 
 .form__inp{
+    background-color: beige;
     width: 100%;
     border-radius: 13px;
     padding: 11px;
     outline: none;
     margin-top: 2px;
-    border: solid 1px rgb(80, 77, 77);
+    border: solid 0.5px rgb(80, 77, 77);
  }
 
 .form__inp::placeholder {
-     color: rgb(130, 126, 126);
-     font-size: 1.5rem;
+     color: rgb(177, 168, 168);
+     font-size: 1.3rem;
 }
 
 .form__btn-login {
-    margin-top: 17px;
+    margin-top: 9px;
     border-radius: 15px;
     font-weight: bold;
     padding: 9px;
@@ -46,6 +47,7 @@
     border: none;
     font-size: 1.7rem;
     background-color: rgba(0, 0, 0, 0.562);
+    /* border: solid 0.5px rgba(0, 0, 0, 0.726); */
     color: #fff;
  }
 
@@ -56,7 +58,7 @@
     justify-content: center;
     align-items: center;
     font-size:1.4rem ;
-    padding: 10px;
+    padding: 20px 0 0;
 }
 
 .form__link{

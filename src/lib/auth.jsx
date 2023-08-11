@@ -51,8 +51,8 @@ const firebase = () => {
 
   return {
     signIn,
-    singGoogle,
     createUser,
+    singGoogle,
   };
 };
 
