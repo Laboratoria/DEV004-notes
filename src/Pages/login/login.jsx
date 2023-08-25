@@ -40,7 +40,7 @@ const Login = () => {
           <Form
             onSubmit={onSubmitLogin}
             buttonText='Iniciar sesión'
-            questionText='¿No tienes cuenta?'
+            questionText='¿Aún no tienes cuenta?'
             navigateToView={onClickinLink}
             linkText='Regístrate'
             register={register}

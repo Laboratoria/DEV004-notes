@@ -64,7 +64,7 @@
 .form__link{
     color: #000;
     font-weight: bold;
-    text-decoration: none;
+    /* text-decoration: none; */
     background-color: rgba(128, 128, 128, 0.438);
     padding: 3px 6px;
     border-radius: 10px;
